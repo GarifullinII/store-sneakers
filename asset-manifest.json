@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/store-sneakers/static/css/main.4f311496.chunk.css",
-    "main.js": "/store-sneakers/static/js/main.44e81503.chunk.js",
-    "main.js.map": "/store-sneakers/static/js/main.44e81503.chunk.js.map",
+    "main.css": "/store-sneakers/static/css/main.e697e23d.chunk.css",
+    "main.js": "/store-sneakers/static/js/main.6919829a.chunk.js",
+    "main.js.map": "/store-sneakers/static/js/main.6919829a.chunk.js.map",
     "runtime-main.js": "/store-sneakers/static/js/runtime-main.e606cf12.js",
     "runtime-main.js.map": "/store-sneakers/static/js/runtime-main.e606cf12.js.map",
     "static/css/2.1cdcfe91.chunk.css": "/store-sneakers/static/css/2.1cdcfe91.chunk.css",
@@ -10,9 +10,10 @@
     "static/js/2.87cd8828.chunk.js.map": "/store-sneakers/static/js/2.87cd8828.chunk.js.map",
     "index.html": "/store-sneakers/index.html",
     "static/css/2.1cdcfe91.chunk.css.map": "/store-sneakers/static/css/2.1cdcfe91.chunk.css.map",
-    "static/css/main.4f311496.chunk.css.map": "/store-sneakers/static/css/main.4f311496.chunk.css.map",
+    "static/css/main.e697e23d.chunk.css.map": "/store-sneakers/static/css/main.e697e23d.chunk.css.map",
     "static/js/2.87cd8828.chunk.js.LICENSE.txt": "/store-sneakers/static/js/2.87cd8828.chunk.js.LICENSE.txt",
     "static/media/btn-plus.a4c35ddb.svg": "/store-sneakers/static/media/btn-plus.a4c35ddb.svg",
+    "static/media/btn-remove.b1fef0aa.svg": "/store-sneakers/static/media/btn-remove.b1fef0aa.svg",
     "static/media/cart.5113b08f.svg": "/store-sneakers/static/media/cart.5113b08f.svg",
     "static/media/heart-unliked.b7857eaf.svg": "/store-sneakers/static/media/heart-unliked.b7857eaf.svg",
     "static/media/heart.31c528b0.svg": "/store-sneakers/static/media/heart.31c528b0.svg",
@@ -28,7 +29,7 @@
     "static/js/runtime-main.e606cf12.js",
     "static/css/2.1cdcfe91.chunk.css",
     "static/js/2.87cd8828.chunk.js",
-    "static/css/main.4f311496.chunk.css",
-    "static/js/main.44e81503.chunk.js"
+    "static/css/main.e697e23d.chunk.css",
+    "static/js/main.6919829a.chunk.js"
   ]
 }
