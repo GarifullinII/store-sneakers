@@ -73,7 +73,7 @@ header {
 
 .button {
   background: #ffffff;
-  border: 1px solid cornflowerblue;
+  border: 1px solid #f3f3f3;
   box-sizing: border-box;
   border-radius: 8px;
   height: 32px;
@@ -138,7 +138,7 @@ header {
       div {
         flex: 1;
         height: 1px;
-        border-bottom: 1px dashed #dfdfdf;
+        border-bottom: 1px dashed cornflowerblue;
         position: relative;
         top: -4px;
         margin: 0 7px;
@@ -186,7 +186,7 @@ header {
 }
 
 .cartItem {
-  border: 1px solid #f3f3f3;
+  border: 1px solid cornflowerblue;
   border-radius: 20px;
   overflow: hidden;
   padding: 20px;
