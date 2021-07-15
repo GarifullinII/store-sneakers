@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from "../../img/logo.svg";
-import cart from "../../img/cart.svg";
-import heart from "../../img/heart.svg";
-import user from "../../img/user.svg";
+import logo from '../../img/logo.svg';
+import cart from '../../img/cart.svg';
+import heart from '../../img/heart.svg';
+import user from '../../img/user.svg';
 
 const Header = () => {
     return (

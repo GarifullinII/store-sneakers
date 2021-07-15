@@ -1,7 +1,7 @@
 import React from 'react';
-import heartUnliked from "../../img/heart-unliked.svg";
-import sneakers1 from "../../img/sneakers/sneakers1.jpg";
-import btnPlus from "../../img/btn-plus.svg";
+import heartUnliked from '../../img/heart-unliked.svg';
+import sneakers1 from '../../img/sneakers/sneakers1.jpg';
+import btnPlus from '../../img/btn-plus.svg';
 
 const Card = () => {
     return (
