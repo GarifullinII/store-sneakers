@@ -17,14 +17,14 @@ const App = () => {
 
         <div className="overlay">
             <div className="drawer">
-                <h2>Basket</h2>
-                <div className="cartItem d-flex align-center">
+                <h2 className="mb-30">Basket</h2>
+
+                <div className="cartItem d-flex align-center mb-20">
                     <div
                         style={{backgroundImage:`url(${sneakers2})`}}
-                        className="cartItemImg">
-
+                        className="cartItemImg"
+                    >
                     </div>
-
                     <div className="mr-20 flex">
                         <p className="mb-5">
                             Nike Air Max 270 Mens Trainers
@@ -33,6 +33,22 @@ const App = () => {
                     </div>
                     <img className="removeBtn" src={remove} alt="remove"/>
                 </div>
+
+                <div className="cartItem d-flex align-center">
+                    <div
+                        style={{backgroundImage:`url(${sneakers4})`}}
+                        className="cartItemImg"
+                    >
+                    </div>
+                    <div className="mr-20 flex">
+                        <p className="mb-5">
+                            Puma X Aka Boku Future Rider Mens Trainers
+                        </p>
+                        <b>350 $</b>
+                    </div>
+                    <img className="removeBtn" src={remove} alt="remove"/>
+                </div>
+
             </div>
         </div>
 
@@ -121,7 +137,7 @@ const App = () => {
                     <div className="d-flex justify-between align-center">
                         <div className="d-flex flex-column">
                             <span>Price</span>
-                            <b>300 $</b>
+                            <b>350 $</b>
                         </div>
                         <button className="button">
                             <img width={11} height={11} src={btnPlus} alt="plus" />
