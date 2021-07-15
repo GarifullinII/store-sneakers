@@ -7,11 +7,9 @@ const App = () => {
   return (
     <div className="wrapper clear">
 
-        <div style={{display: "none"}} className="overlay">
-            <Drawer/>
-        </div>
+        <Drawer />
 
-        <Header/>
+        <Header />
 
         <div className="content p-40">
 
