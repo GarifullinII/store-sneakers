@@ -4,7 +4,7 @@ import cart from '../../img/cart.svg';
 import heart from '../../img/heart.svg';
 import user from '../../img/user.svg';
 
-const Header = () => {
+const Index = () => {
     return (
         <header className="d-flex justify-between align-center p-40">
             <div className="d-flex align-center">
@@ -30,4 +30,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Index;

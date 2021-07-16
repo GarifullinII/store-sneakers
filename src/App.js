@@ -1,7 +1,7 @@
 import search from './img/search.svg';
-import Card from './components/card/Card';
-import Header from './components/header/Header';
-import Drawer from './components/drawer/Drawer';
+import Card from './components/Card';
+import Header from './components/Header';
+import Drawer from './components/Drawer';
 import sneakers1 from './img/sneakers/sneakers1.jpg';
 import sneakers2 from './img/sneakers/sneakers2.jpg';
 import sneakers3 from './img/sneakers/sneakers3.jpg';
@@ -34,9 +34,9 @@ const App = () => {
   return (
     <div className="wrapper clear">
 
-        <Drawer />
-
         <Header />
+
+        <Drawer />
 
         <div className="content p-40">
 
