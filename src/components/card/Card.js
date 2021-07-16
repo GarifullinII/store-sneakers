@@ -3,6 +3,11 @@ import heartUnliked from '../../img/heart-unliked.svg';
 import btnPlus from '../../img/btn-plus.svg';
 
 const Card = (props) => {
+
+    const onClickButton = () => {
+        alert(props.price)
+    }
+
     return (
         <div className="card">
 
@@ -19,7 +24,7 @@ const Card = (props) => {
                     <span>Price</span>
                     <b>{props.price}</b>
                 </div>
-                <button className="button">
+                <button className="button" onClick={onClickButton}>
                     <img width={11} height={11} src={btnPlus} alt="plus" />
                 </button>
             </div>
