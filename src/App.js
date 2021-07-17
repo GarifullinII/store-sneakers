@@ -11,22 +11,22 @@ import sneakers4 from './img/sneakers/sneakers4.jpg';
 const ArraySneakers = [
     {
         title: 'Nike Blazer Mid Suede Mens Trainers',
-        price: 300,
+        price: '300 $',
         imgUrl: sneakers1
     },
     {
         title: 'Nike Air Max 270 Mens Trainers',
-        price: 300,
+        price: '300 $',
         imgUrl: sneakers2
     },
     {
         title: 'Nike Blazer Mid Suede Mens Trainers',
-        price: 250,
+        price: '250 $',
         imgUrl: sneakers3
     },
     {
         title: 'Puma X Aka Boku Future Rider Mens Trainers',
-        price: 250,
+        price: '250 $',
         imgUrl: sneakers4
     }
 ]
