@@ -4,12 +4,12 @@ import sneakers2 from '../../img/sneakers/sneakers2.jpg';
 import sneakers4 from '../../img/sneakers/sneakers4.jpg';
 import arrow from '../../img/arrow.svg';
 
-const Drawer = () => {
+const Drawer = (props) => {
     return (
         <div className="overlay">
             <div className="drawer">
 
-                <h2 className="d-flex justify-between mb-30">Basket <img className="removeBtn cu-p" src={remove} alt="remove"/></h2>
+                <h2 className="d-flex justify-between mb-30">Basket <img onClick={props.onClose} className="removeBtn cu-p" src={remove} alt="remove"/></h2>
 
                 <div className="items">
                     <div className="cartItem d-flex align-center mb-20">

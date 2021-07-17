@@ -37,12 +37,11 @@ const App = () => {
 
   return (
     <div className="wrapper clear">
-        <Header onClickCart={() => {
-            setCartOpened(true)
-        }
-        }/>
+        <Header
+            onClickCart={() => {setCartOpened(true)}}
+        />
 
-        {cartOpened ? <Drawer /> : null}
+        {cartOpened ? <Drawer onClose={() => {setCartOpened(false)}}/> : null}
 
         <div className="content p-40">
 
