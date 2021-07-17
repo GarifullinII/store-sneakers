@@ -4,7 +4,7 @@ import sneakers2 from '../../img/sneakers/sneakers2.jpg';
 import sneakers4 from '../../img/sneakers/sneakers4.jpg';
 import arrow from '../../img/arrow.svg';
 
-const Index = () => {
+const Drawer = () => {
     return (
         <div style={{display: "none"}} className="overlay">
             <div className="drawer">
@@ -67,4 +67,4 @@ const Index = () => {
     )
 }
 
-export default Index;
+export default Drawer;

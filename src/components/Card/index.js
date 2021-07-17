@@ -1,19 +1,22 @@
 import React from 'react';
 import heartUnliked from '../../img/heart-unliked.svg';
 import btnPlus from '../../img/btn-plus.svg';
+import btnUnchecked from '../../img/btn-unchecked.svg';
 import styles from './Card.module.scss';
 
-const Index = (props) => {
+const Card = (props) => {
 
-    const onClickButton = () => {
-        alert(props.price)
-    }
+    const [isAdded, setIsAdded] = React.useState(false);
+
+    const handleClick = () => {
+        setIsAdded(!isAdded);
+    };
 
     return (
         <div className={styles.card}>
 
             <div className={styles.favorite}>
-                <img src={heartUnliked} alt="unliked"/>
+                <img src={heartUnliked} alt="unliked" onClick={props.onFavorite}/>
             </div>
 
             <img width={133} height={112} src={props.imgUrl} alt="sneakers"/>
@@ -25,13 +28,11 @@ const Index = (props) => {
                     <span>Price</span>
                     <b>{props.price}</b>
                 </div>
-                <button className="button" onClick={onClickButton}>
-                    <img width={11} height={11} src={btnPlus} alt="plus" />
-                </button>
+                    <img className={styles.plus} onClick={handleClick} src={isAdded ? btnUnchecked : btnPlus } alt="plus" />
             </div>
 
         </div>
     )
 }
 
-export default Index;
+export default Card;

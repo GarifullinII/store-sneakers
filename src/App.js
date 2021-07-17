@@ -1,3 +1,4 @@
+import React from 'react';
 import search from './img/search.svg';
 import Card from './components/Card';
 import Header from './components/Header';
@@ -31,9 +32,9 @@ const ArraySneakers = [
 ]
 
 const App = () => {
+
   return (
     <div className="wrapper clear">
-
         <Header />
 
         <Drawer />
@@ -56,6 +57,8 @@ const App = () => {
                             title={obj.title}
                             price={obj.price}
                             imgUrl={obj.imgUrl}
+                            onFavorite={() => console.log("bookmarked")}
+                            onPlus={() => console.log("clicked on the plus")}
                         />
                     ))
                 }
