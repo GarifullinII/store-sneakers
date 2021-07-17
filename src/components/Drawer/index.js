@@ -6,7 +6,7 @@ import arrow from '../../img/arrow.svg';
 
 const Drawer = () => {
     return (
-        <div style={{display: "none"}} className="overlay">
+        <div className="overlay">
             <div className="drawer">
 
                 <h2 className="d-flex justify-between mb-30">Basket <img className="removeBtn cu-p" src={remove} alt="remove"/></h2>

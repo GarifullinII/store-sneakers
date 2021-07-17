@@ -33,11 +33,16 @@ const ArraySneakers = [
 
 const App = () => {
 
+    const [cartOpened, setCartOpened] = React.useState(false);
+
   return (
     <div className="wrapper clear">
-        <Header />
+        <Header onClickCart={() => {
+            setCartOpened(true)
+        }
+        }/>
 
-        <Drawer />
+        {cartOpened ? <Drawer /> : null}
 
         <div className="content p-40">
 

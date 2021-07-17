@@ -4,7 +4,7 @@ import cart from '../../img/cart.svg';
 import heart from '../../img/heart.svg';
 import user from '../../img/user.svg';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className="d-flex justify-between align-center p-40">
             <div className="d-flex align-center">
@@ -15,14 +15,14 @@ const Header = () => {
                 </div>
             </div>
             <ul className="d-flex">
-                <li className="mr-30">
-                    <img width={18} height={18} src={cart} alt="cart" />
+                <li className="mr-30 cu-p">
+                    <img onClick={props.onClickCart} width={18} height={18} src={cart} alt="cart" />
                     <span>230 $</span>
                 </li>
-                <li className="mr-30">
+                <li className="mr-30 cu-p">
                     <img width={18} height={18} src={heart} alt="like" />
                 </li>
-                <li>
+                <li className="cu-p">
                     <img width={18} height={18} src={user} alt="user" />
                 </li>
             </ul>
