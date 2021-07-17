@@ -41,7 +41,7 @@ const App = () => {
             onClickCart={() => {setCartOpened(true)}}
         />
 
-        {cartOpened ? <Drawer onClose={() => {setCartOpened(false)}}/> : null}
+        {cartOpened && <Drawer onClose={() => {setCartOpened(false)}}/>}
 
         <div className="content p-40">
 
