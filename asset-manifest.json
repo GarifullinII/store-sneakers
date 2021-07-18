@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/store-sneakers/static/css/main.53390a55.chunk.css",
-    "main.js": "/store-sneakers/static/js/main.d8a4c115.chunk.js",
-    "main.js.map": "/store-sneakers/static/js/main.d8a4c115.chunk.js.map",
+    "main.css": "/store-sneakers/static/css/main.3fed4695.chunk.css",
+    "main.js": "/store-sneakers/static/js/main.23e64acb.chunk.js",
+    "main.js.map": "/store-sneakers/static/js/main.23e64acb.chunk.js.map",
     "runtime-main.js": "/store-sneakers/static/js/runtime-main.e606cf12.js",
     "runtime-main.js.map": "/store-sneakers/static/js/runtime-main.e606cf12.js.map",
     "static/css/2.1cdcfe91.chunk.css": "/store-sneakers/static/css/2.1cdcfe91.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.e98e21b2.chunk.js.map": "/store-sneakers/static/js/2.e98e21b2.chunk.js.map",
     "index.html": "/store-sneakers/index.html",
     "static/css/2.1cdcfe91.chunk.css.map": "/store-sneakers/static/css/2.1cdcfe91.chunk.css.map",
-    "static/css/main.53390a55.chunk.css.map": "/store-sneakers/static/css/main.53390a55.chunk.css.map",
+    "static/css/main.3fed4695.chunk.css.map": "/store-sneakers/static/css/main.3fed4695.chunk.css.map",
     "static/js/2.e98e21b2.chunk.js.LICENSE.txt": "/store-sneakers/static/js/2.e98e21b2.chunk.js.LICENSE.txt",
     "static/media/arrow.fc322251.svg": "/store-sneakers/static/media/arrow.fc322251.svg",
     "static/media/btn-plus.a4c35ddb.svg": "/store-sneakers/static/media/btn-plus.a4c35ddb.svg",
@@ -21,9 +21,7 @@
     "static/media/heart.31c528b0.svg": "/store-sneakers/static/media/heart.31c528b0.svg",
     "static/media/logo.9e858141.svg": "/store-sneakers/static/media/logo.9e858141.svg",
     "static/media/search.48c52bf5.svg": "/store-sneakers/static/media/search.48c52bf5.svg",
-    "static/media/sneakers1.2444684c.jpg": "/store-sneakers/static/media/sneakers1.2444684c.jpg",
     "static/media/sneakers2.b343f88d.jpg": "/store-sneakers/static/media/sneakers2.b343f88d.jpg",
-    "static/media/sneakers3.d921a1ac.jpg": "/store-sneakers/static/media/sneakers3.d921a1ac.jpg",
     "static/media/sneakers4.f452253d.jpg": "/store-sneakers/static/media/sneakers4.f452253d.jpg",
     "static/media/user.381202f7.svg": "/store-sneakers/static/media/user.381202f7.svg"
   },
@@ -31,7 +29,7 @@
     "static/js/runtime-main.e606cf12.js",
     "static/css/2.1cdcfe91.chunk.css",
     "static/js/2.e98e21b2.chunk.js",
-    "static/css/main.53390a55.chunk.css",
-    "static/js/main.d8a4c115.chunk.js"
+    "static/css/main.3fed4695.chunk.css",
+    "static/js/main.23e64acb.chunk.js"
   ]
 }
