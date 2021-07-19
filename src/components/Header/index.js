@@ -4,6 +4,7 @@ import cart from '../../img/cart.svg';
 import heart from '../../img/heart.svg';
 import user from '../../img/user.svg';
 
+
 const Header = (props) => {
     return (
         <header className="d-flex justify-between align-center p-40">

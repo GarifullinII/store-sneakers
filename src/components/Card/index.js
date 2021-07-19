@@ -4,6 +4,7 @@ import btnPlus from '../../img/btn-plus.svg';
 import btnUnchecked from '../../img/btn-unchecked.svg';
 import styles from './Card.module.scss';
 
+
 const Card = ({title, imgUrl, price, onFavorite, onPlus}) => {
 
     const [isAdded, setIsAdded] = React.useState(false);
