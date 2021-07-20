@@ -7,7 +7,6 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
     return (
         <div className="overlay">
             <div className="drawer">
-
                 <h2 className="d-flex justify-between mb-30">
                     Basket
                     <img
@@ -16,7 +15,6 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                         src={remove}
                         alt="remove"/>
                 </h2>
-
                 {
                     items.length > 0 ? (
                         <div>
@@ -50,9 +48,7 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                                     </div>
                                 ))}
                             </div>
-
                             <div className="cartTotalBlock">
-
                                 <ul>
                                     <li>
                                         <span>Total:</span>
@@ -65,9 +61,7 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                                         <b>32 $</b>
                                     </li>
                                 </ul>
-
                                 <button className="greenButton">Checkout <img src={arrow} alt="arrow"/></button>
-
                             </div>
                         </div>
                     ) : (
@@ -86,7 +80,7 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                 }
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Drawer;

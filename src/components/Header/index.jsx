@@ -33,7 +33,7 @@ const Header = (props) => {
                 </li>
             </ul>
         </header>
-    )
-}
+    );
+};
 
 export default Header;

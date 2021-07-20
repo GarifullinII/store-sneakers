@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Header from './components/Header';
 import Drawer from './components/Drawer';
 import Home from './pages/Home';
+import Favorites from './pages/Favorites';
 
 
 const App = () => {
@@ -25,6 +26,9 @@ const App = () => {
         axios.get('https://60f30ad66d44f30017788896.mockapi.io/cart').then((res) => {
             setCartItems(res.data)
         });
+        axios.get('https://60f30ad66d44f30017788896.mockapi.io/favorites').then((res) => {
+            setFavorites(res.data)
+        });
     }, []);
 
     const onAddToCart = (obj) => {
@@ -32,15 +36,24 @@ const App = () => {
         setCartItems((prev) => [...prev, obj]);
     };
 
-    const onAddToFavorite = (obj) => {
-        axios.post('https://60f30ad66d44f30017788896.mockapi.io/favorites', obj);
-        setFavorites((prev) => [...prev, obj]);
-    };
-
     const onRemoveItem = (id) => {
         axios.delete(`https://60f30ad66d44f30017788896.mockapi.io/cart/${id}`);
         setCartItems((prev) => prev.filter((item) => item.id !== id));
     }
+
+    const onAddToFavorite = async (obj) => {
+        try {
+            if(favorites.find((favObj) => favObj.id === obj.id)) {
+                axios.delete(`https://60f30ad66d44f30017788896.mockapi.io/favorites/${obj.id}`);
+                //setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
+            } else  {
+                const {data} = await axios.post('https://60f30ad66d44f30017788896.mockapi.io/favorites', obj);
+                setFavorites((prev) => [...prev, data]);
+            }
+        } catch (error) {
+            alert('Failed to add to favorites')
+        }
+    };
 
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value);
@@ -51,9 +64,7 @@ const App = () => {
         <Header
             onClickCart={() => {setCartOpened(true)}}
         />
-
         {cartOpened && <Drawer items={cartItems} onClose={() => {setCartOpened(false)}} onRemove={onRemoveItem}/>}
-
         <Route path="/" exact>
             <Home
                 items={items}
@@ -64,9 +75,11 @@ const App = () => {
                 onAddToCart={onAddToCart}
             />
         </Route>
-
+        <Route path="/favorites" exact>
+            <Favorites items={favorites} onAddToFavorite={onAddToFavorite}/>
+        </Route>
     </div>
   );
-}
+};
 
 export default App;

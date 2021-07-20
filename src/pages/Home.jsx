@@ -12,7 +12,6 @@ const Home = ( {items,
                onAddToCart} ) => {
     return (
         <div className="content  p-40">
-
             <div className="d-flex align-center justify-between mb-40">
                 <h1>{searchValue ? `Search by request: "${searchValue}"` : 'All sneakers'}</h1>
                 <div className="search-block d-flex">
@@ -28,24 +27,18 @@ const Home = ( {items,
                     <input onChange={onChangeSearchInput} value={searchValue} placeholder="search ..."/>
                 </div>
             </div>
-
             <div className="d-flex flex-wrap">
-
                 {items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item, index) => (
                     <Card
                         key={index}
-                        title={item.title}
-                        price={item.price}
-                        imgUrl={item.imgUrl}
                         onFavorite={(obj) => onAddToFavorite(obj)}
                         onPlus={(obj) => onAddToCart(obj)}
+                        {...item}
                     />
                 ))}
-
             </div>
-
         </div>
-    )
-}
+    );
+};
 
 export default Home;

@@ -6,11 +6,11 @@ import btnUnchecked from '../../img/btn-unchecked.svg';
 import styles from './Card.module.scss';
 
 
-const Card = ({title, imgUrl, price, onFavorite, onPlus}) => {
+const Card = ({id, title, imgUrl, price, onFavorite, onPlus, favorited = false}) => {
 
     const [isAdded, setIsAdded] = React.useState(false);
 
-    const [isFavorite, setIsFavorite] = React.useState(false);
+    const [isFavorite, setIsFavorite] = React.useState(favorited);
 
     const handleClick = () => {
         onPlus({title, imgUrl, price});
@@ -18,7 +18,7 @@ const Card = ({title, imgUrl, price, onFavorite, onPlus}) => {
     };
 
     const onClickFavorite = () => {
-        onFavorite({title, imgUrl, price});
+        onFavorite({id, title, imgUrl, price});
         setIsFavorite(!isFavorite);
     };
 
