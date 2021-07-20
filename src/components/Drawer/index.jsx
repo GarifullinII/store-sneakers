@@ -3,7 +3,7 @@ import remove from '../../img/btn-remove.svg';
 import arrow from '../../img/arrow.svg';
 import emptyCart from '../../img/empty-cart.jpg'
 
-const Drawer = ({ onClose,onRemove, items = [] }) => {
+const Drawer = ({ onClose, onRemove, items = [] }) => {
     return (
         <div className="overlay">
             <div className="drawer">
@@ -17,14 +17,12 @@ const Drawer = ({ onClose,onRemove, items = [] }) => {
                         alt="remove"/>
                 </h2>
 
-                {items.length > 0 ? (
+                {
+                    items.length > 0 ? (
+                        <div>
+                            <div className="items">
 
-                    <div>
-
-                        <div className="items">
-
-                            {
-                                items.map((obj) => (
+                                {items.map((obj) => (
                                     <div>
 
                                         <div className="cartItem d-flex align-center mb-20">
@@ -48,33 +46,32 @@ const Drawer = ({ onClose,onRemove, items = [] }) => {
                                                 alt="remove"
                                             />
                                         </div>
+
                                     </div>
                                 ))}
+                            </div>
+
+                            <div className="cartTotalBlock">
+
+                                <ul>
+                                    <li>
+                                        <span>Total:</span>
+                                        <div></div>
+                                        <b>650 $</b>
+                                    </li>
+                                    <li>
+                                        <span>Tax 5%:</span>
+                                        <div></div>
+                                        <b>32 $</b>
+                                    </li>
+                                </ul>
+
+                                <button className="greenButton">Checkout <img src={arrow} alt="arrow"/></button>
+
+                            </div>
                         </div>
-
-                        <div className="cartTotalBlock">
-
-                            <ul>
-                                <li>
-                                    <span>Total:</span>
-                                    <div></div>
-                                    <b>650 $</b>
-                                </li>
-                                <li>
-                                    <span>Tax 5%:</span>
-                                    <div></div>
-                                    <b>32 $</b>
-                                </li>
-                            </ul>
-
-                            <button className="greenButton">Checkout <img src={arrow} alt="arrow"/></button>
-
-                        </div>
-
-                    </div>
-
                     ) : (
-                    <div className="cartEmpty d-flex align-center justify-center flex-column flex">
+                        <div className="cartEmpty d-flex align-center justify-center flex-column flex">
                         <img className="mb-20" width="120px" height="120px" src={emptyCart} alt="basket is empty"/>
                         <h2>Basket is empty</h2>
                         <p className="opacity-6">
@@ -85,9 +82,8 @@ const Drawer = ({ onClose,onRemove, items = [] }) => {
                             Come back
                         </button>
                     </div>
-                    )}
-
-
+                    )
+                }
             </div>
         </div>
     )
