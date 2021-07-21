@@ -15,8 +15,7 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                         src={remove}
                         alt="remove"/>
                 </h2>
-                {
-                    items.length > 0 ? (
+                {items.length > 0 ? (
                         <div>
                             <div className="items">
 
