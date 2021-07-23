@@ -58,13 +58,17 @@ const App = () => {
     }
 
     const onAddToFavorite = async (obj) => {
-            if(favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+        try {
+            if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
                 axios.delete(`https://60f30ad66d44f30017788896.mockapi.io/favorites/${obj.id}`);
                 setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
             } else {
                 const {data} = await axios.post('https://60f30ad66d44f30017788896.mockapi.io/favorites', obj);
                 setFavorites((prev) => [...prev, data]);
             }
+        } catch (error) {
+            alert('Failed to add to favorites')
+        }
     };
 
     const onChangeSearchInput = (event) => {
@@ -76,7 +80,7 @@ const App = () => {
     }
 
   return (
-    <AppContext.Provider value={{items, cartItems, favorites, isItemAdded}}>
+    <AppContext.Provider value={{items, cartItems, favorites, isItemAdded, onAddToFavorite}}>
         <div className="wrapper clear">
             {cartOpened && (
                 <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem}/>
