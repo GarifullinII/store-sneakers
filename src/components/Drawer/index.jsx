@@ -1,9 +1,45 @@
 import React from 'react';
 import remove from '../../img/btn-remove.svg';
 import arrow from '../../img/arrow.svg';
-import emptyCart from '../../img/empty-cart.jpg'
+import emptyCart from '../../img/empty-cart.jpg';
+import completeOrder from '../../img/complete-order.jpg';
+import Info from '../Info/Info';
+import axios from 'axios';
+import {useCart} from '../../hooks/useCart';
+
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Drawer = ({ onClose, onRemove, items = [] }) => {
+
+    const {cartItems, setCartItems, totalPrice} = useCart();
+
+    const [orderId, setOrderId] = React.useState(null);
+
+    const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    const onClickOrder = async () => {
+        try {
+            setIsLoading(true)
+            const { data } = await axios.post('https://60f30ad66d44f30017788896.mockapi.io/orders', {
+               items: cartItems
+            });
+            setOrderId(data.id);
+            setIsOrderComplete(true);
+            setCartItems([]);
+            for (let i = 0; i < cartItems.length; i++) {
+                const item = cartItems[i];
+                await axios.delete('https://60f30ad66d44f30017788896.mockapi.io/cart/' + item.id);
+                await delay(1000);
+            }
+        } catch (error) {
+            alert('Failed to create order :(')
+        }
+        setIsLoading(false)
+    };
+
     return (
         <div className="overlay">
             <div className="drawer">
@@ -43,7 +79,6 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                                                 alt="remove"
                                             />
                                         </div>
-
                                     </div>
                                 ))}
                             </div>
@@ -52,29 +87,26 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                                     <li>
                                         <span>Total:</span>
                                         <div></div>
-                                        <b>650 $</b>
+                                        <b>{totalPrice} euro</b>
                                     </li>
                                     <li>
                                         <span>Tax 5%:</span>
                                         <div></div>
-                                        <b>32 $</b>
+                                        <b>{(totalPrice / 100) * 5} euro</b>
                                     </li>
                                 </ul>
-                                <button className="greenButton">Checkout <img src={arrow} alt="arrow"/></button>
+                                <button disabled={isLoading} onClick={onClickOrder} className="greenButton">
+                                    Checkout
+                                    <img src={arrow} alt="arrow"/>
+                                </button>
                             </div>
                         </div>
                     ) : (
-                        <div className="cartEmpty d-flex align-center justify-center flex-column flex">
-                        <img className="mb-20" width="120px" height="120px" src={emptyCart} alt="basket is empty"/>
-                        <h2>Basket is empty</h2>
-                        <p className="opacity-6">
-                            Add at least one pair of sneakers to order
-                        </p>
-                        <button onClick={onClose} className="greenButton">
-                            <img src={arrow} alt="arrow"/>
-                            Come back
-                        </button>
-                    </div>
+                        <Info
+                            title={isOrderComplete ? "Order is processed" : "Basket is empty"}
+                            description={isOrderComplete ? `Your order #${orderId} will be delivered by courier soon` : "Add at least one pair of sneakers to order"}
+                            image={isOrderComplete ? completeOrder : emptyCart}
+                        />
                     )
                 }
             </div>

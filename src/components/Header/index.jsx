@@ -4,9 +4,13 @@ import logo from '../../img/logo.svg';
 import cart from '../../img/cart.svg';
 import heart from '../../img/heart.svg';
 import user from '../../img/user.svg';
+import {useCart} from '../../hooks/useCart';
 
 
 const Header = (props) => {
+
+    const {totalPrice} = useCart();
+
     return (
         <header className="d-flex justify-between align-center p-40">
             <Link to="/">
@@ -21,7 +25,7 @@ const Header = (props) => {
             <ul className="d-flex">
                 <li className="mr-30 cu-p">
                     <img onClick={props.onClickCart} width={18} height={18} src={cart} alt="cart" />
-                    <span>230 $</span>
+                    <span>{totalPrice} euro</span>
                 </li>
                 <li className="mr-20 cu-p">
                     <Link to="/favorites">
@@ -29,7 +33,9 @@ const Header = (props) => {
                     </Link>
                 </li>
                 <li className="cu-p">
-                    <img width={18} height={18} src={user} alt="user" />
+                    <Link to="/orders">
+                        <img width={18} height={18} src={user} alt="user" />
+                    </Link>
                 </li>
             </ul>
         </header>

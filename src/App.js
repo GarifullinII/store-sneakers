@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Drawer from './components/Drawer';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
+import Orders from './pages/Orders';
 import AppContext from './context';
 
 
@@ -20,9 +21,7 @@ const App = () => {
 
     const [cartOpened, setCartOpened] = React.useState(false);
 
-    const [isLoading, setIsLoading] = React.useState(false);
-
-
+    const [isLoading, setIsLoading] = React.useState(true);
 
     React.useEffect(() => {
         async function fetchData() {
@@ -30,6 +29,7 @@ const App = () => {
             const favoritesResponse = await axios.get('https://60f30ad66d44f30017788896.mockapi.io/favorites');
             const itemsResponse = await axios.get('https://60f30ad66d44f30017788896.mockapi.io/items');
 
+            setIsLoading(false);
             setCartItems(cartResponse.data);
             setFavorites(favoritesResponse.data);
             setItems(itemsResponse.data);
@@ -80,7 +80,7 @@ const App = () => {
     }
 
   return (
-    <AppContext.Provider value={{items, cartItems, favorites, isItemAdded, onAddToFavorite}}>
+    <AppContext.Provider value={{items, cartItems, favorites, isItemAdded, onAddToFavorite, setCartOpened, setCartItems}}>
         <div className="wrapper clear">
             {cartOpened && (
                 <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem}/>
@@ -102,6 +102,9 @@ const App = () => {
             </Route>
             <Route path="/favorites" exact>
                 <Favorites/>
+            </Route>
+            <Route path="/orders" exact>
+                <Orders/>
             </Route>
         </div>
     </AppContext.Provider>
