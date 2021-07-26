@@ -61,8 +61,6 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
                             <div className="items flex">
 
                                 {items.map((obj) => (
-                                    <div>
-
                                         <div key={obj.id} className="cartItem d-flex align-center mb-20">
                                             <div
                                                 style={{backgroundImage:`url(${obj.imageUrl})`}}
@@ -84,7 +82,6 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
                                                 alt="remove"
                                             />
                                         </div>
-                                    </div>
                                 ))}
                             </div>
                             <div className="cartTotalBlock">

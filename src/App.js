@@ -49,12 +49,22 @@ const App = () => {
 
     const onAddToCart = async (obj) => {
         try {
-            if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
-                setCartItems(prev => prev.filter((item) => Number(item.id) !== Number(obj.id)));
-                await axios.delete(`https://60f30ad66d44f30017788896.mockapi.io/cart/${obj.id}`);
+            const findItem = cartItems.find((item) => Number(item.parentId) === Number(obj.id));
+            if (findItem) {
+                setCartItems(prev => prev.filter((item) => Number(item.parentId) !== Number(obj.id)));
+                await axios.delete(`https://60f30ad66d44f30017788896.mockapi.io/cart/${findItem.id}`);
             } else {
                 setCartItems((prev) => [...prev, obj]);
-                await axios.post('https://60f30ad66d44f30017788896.mockapi.io/cart', obj);
+                const {data} = await axios.post('https://60f30ad66d44f30017788896.mockapi.io/cart', obj);
+                setCartItems((prev) => prev.map(item => {
+                    if (item.parentId === data.parentId) {
+                        return {
+                            ...item,
+                            id: data.id
+                        }
+                    }
+                    return item;
+                }));
             }
         } catch (error) {
             alert('Failed to add to basket');
@@ -92,7 +102,7 @@ const App = () => {
     };
 
     const isItemAdded = (id) => {
-        return cartItems.some((obj) => Number(obj.id) === Number(id));
+        return cartItems.some((obj) => Number(obj.parentId) === Number(id));
     };
 
   return (
