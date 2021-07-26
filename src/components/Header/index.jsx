@@ -1,10 +1,12 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
+import {useCart} from '../../hooks/useCart';
+
 import logo from '../../img/logo.svg';
 import cart from '../../img/cart.svg';
 import heart from '../../img/heart.svg';
 import user from '../../img/user.svg';
-import {useCart} from '../../hooks/useCart';
 
 
 const Header = (props) => {

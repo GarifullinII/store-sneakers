@@ -1,16 +1,21 @@
 import React from 'react';
+
+import axios from 'axios';
+
+import Info from '../Info/Info';
+import {useCart} from '../../hooks/useCart';
+
+import styles from './Drawer.module.scss';
+
 import remove from '../../img/btn-remove.svg';
 import arrow from '../../img/arrow.svg';
 import emptyCart from '../../img/empty-cart.jpg';
 import completeOrder from '../../img/complete-order.jpg';
-import Info from '../Info/Info';
-import axios from 'axios';
-import {useCart} from '../../hooks/useCart';
 
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const Drawer = ({ onClose, onRemove, items = [] }) => {
+const Drawer = ({ onClose, onRemove, items = [], opened }) => {
 
     const {cartItems, setCartItems, totalPrice} = useCart();
 
@@ -41,8 +46,8 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
     };
 
     return (
-        <div className="overlay">
-            <div className="drawer">
+        <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+            <div className={styles.drawer}>
                 <h2 className="d-flex justify-between mb-30">
                     Basket
                     <img
@@ -53,7 +58,7 @@ const Drawer = ({ onClose, onRemove, items = [] }) => {
                 </h2>
                 {items.length > 0 ? (
                         <div className="d-flex flex-column flex">
-                            <div className="items">
+                            <div className="items flex">
 
                                 {items.map((obj) => (
                                     <div>

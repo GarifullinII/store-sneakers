@@ -1,7 +1,9 @@
 import React from 'react';
+
+import Card from '../components/Card';
+
 import search from '../img/search.svg';
 import remove from '../img/btn-remove.svg';
-import Card from '../components/Card';
 
 
 const Home = ( {

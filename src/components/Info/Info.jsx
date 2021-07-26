@@ -1,6 +1,9 @@
 import React from 'react';
-import arrow from '../../img/arrow.svg';
+
 import AppContext from '../../context';
+
+import arrow from '../../img/arrow.svg';
+
 
 const Info = ( {title, description, image} ) => {
 
